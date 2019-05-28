@@ -58,27 +58,6 @@ def __update_pheromone_gragh():
             for j in range(city_num):
                 pheromone_graph[i][j] = pheromone_graph[i][j] * AntColonyCore.RHO + temp_pheromone[i][j]  # 上一次的信息素*衰减因子+此次的信息素
 
-# def line(self, order):
-#         # 删除原线
-#         self.canvas.delete("line")
-
-#         def line2(i1, i2):
-#             p1, p2 = self.nodes[i1], self.nodes[i2]
-#             self.canvas.create_line(p1, p2, fill="#000000", tags="line")
-#             return i2
-
-#         # # 删除某个坐标点
-#         # if Demo==2: # 不显示返回起始点
-#         #     if 0 in self.best_ant.path:
-#         #         index=self.best_ant.path.index(0)
-#         #         if index==0:  #在0位，则从末尾开始
-#         #             index=city_num
-#         #         self.best_ant.path.pop(index-1)  # 删除 n->0的路径
-#         #         self.line(self.best_ant.path)
-#         #
-#         # order[-1]为初始值
-#         reduce(line2, order, order[-1])  # 反复调用函数line2
-
 
 for i in range(city_num):
     for j in range(city_num):
