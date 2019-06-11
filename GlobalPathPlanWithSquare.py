@@ -38,7 +38,11 @@ def getLineLength(firstwayPnt, secondwayPnt):
 
 
 # 创建地图
+<<<<<<< HEAD
 f = figure(figsize=(10,10))
+=======
+f = figure(figsize=(7,7))
+>>>>>>> 0c3650f7c5f507addb5831a320bafa456424fa04
 ax = plt.subplot(111)
 # square size
 squaresize = 0.0015
@@ -124,6 +128,7 @@ while plotsquareCount<len(squareprolist):
         ax.add_collection(lines)
     plotsquareCount=plotsquareCount+1
 print("环境构建成功")
+<<<<<<< HEAD
 x,y = m(-170.229145,52.701435)
 m.scatter(x,y, c='r', marker='o')
 # -*- coding: utf-8 -*-
@@ -133,6 +138,8 @@ All rights reserved.
 Distributed under the BSD license.
 """
 plt.show()
+=======
+>>>>>>> 0c3650f7c5f507addb5831a320bafa456424fa04
 
 
 
@@ -143,6 +150,7 @@ diagram4.walls = DisNavigonal
 diagram4.weights = Naviweight
 # 起始点
 
+<<<<<<< HEAD
 startPoint = ps.get_polygonIndexfromPoint(-170.54, 52.70,squareprolist)#获取点的方格坐标
 print(startPoint)
 # 目标点
@@ -247,5 +255,161 @@ while lineCount < (len(curvelist) - 1):
     xlist, ylist = m(y, x)  # 将经纬度转换为图片所用坐标
     m.plot(xlist, ylist, color='r')  # 首先画白线
     lineCount = lineCount + 1
+=======
+# startPoint = ps.get_polygonIndexfromPoint(-170.229145,52.701435,squareprolist)#获取点的方格坐标
+# print(startPoint)
+# # 目标点
+# targetPoint = ps.get_polygonIndexfromPoint(-169.791635,52.895138,squareprolist)
+# print(targetPoint)
+# came_from_d, cost_so_far = ps.dijkstra_search(diagram4,startPoint,targetPoint)
+# print("Dijkstra算法寻得最短路径")
+# pathFinderPoints = []
+# # 回溯父节点
+# pathFinderPoints.append(targetPoint)
+# fatherNode = came_from_d[targetPoint]
+# while fatherNode != startPoint:
+#     pathFinderPoints.append(fatherNode)
+#     fatherNode = came_from_d[fatherNode]
+    
+# pathFinderPoints.append(startPoint)#所有的网格节点信息
+# print("优化前节点个数： %d" % len(pathFinderPoints))
+# # 在地图上绘制最短路径
+# lineCount = 0;
+# PlanedcenterPnt=[]
+# while lineCount < (len(pathFinderPoints) - 1):
+#     last = pathFinderPoints[lineCount]
+#     new = pathFinderPoints[lineCount + 1]
+#     # print(last)
+#     lastCenter = ES.getCenterPoint(ullong, ullati, squaresize, last)  # Point
+#     PlanedcenterPnt.append(lastCenter)
+#     newCenter = ES.getCenterPoint(ullong, ullati, squaresize, new)  # Point
+#     if lineCount == 0:
+#         y1 = [lastCenter.y]
+#         x1 = [lastCenter.x]
+#         x1, y1 = m(x1, y1)
+#         m.scatter(x1, y1, c='r', marker='o')
+#     if lineCount == len(pathFinderPoints) - 2:
+#         y1 = [newCenter.y]
+#         x1 = [newCenter.x]
+#         x1, y1 = m(x1, y1)
+#         m.plot(x1, y1, c='r', marker='o')
+#     x = [lastCenter.y, newCenter.y]
+#     y = [lastCenter.x, newCenter.x]
+#     xlist, ylist = m(y, x)  # 将经纬度转换为图片所用坐标
+#     m.plot(xlist, ylist, color='b', linestyle=":")  # 首先画白线
+#     m.plot(xlist, ylist, color='r')  # 首先画白线
+#     lineCount = lineCount + 1
+# last = pathFinderPoints[lineCount]
+# lastCenter = ES.getCenterPoint(ullong, ullati, squaresize, last)  # Point
+# PlanedcenterPnt.append(lastCenter)
+# # 规划路径曲线长度
+# wayCount = 0
+# planeddistanceall = 0
+# while wayCount < (len(PlanedcenterPnt) - 1):
+#     planeddistanceall = planeddistanceall + getLineLength(PlanedcenterPnt[wayCount], PlanedcenterPnt[wayCount + 1])  # 米坐标
+#     wayCount += 1
+# print('Dijkstra路径长度',planeddistanceall)
+
+# came_from, cost_so_far, Iteracount = ps.a_star_search(diagram4, startPoint, targetPoint)
+# # print("遍历点数 %d" % (Iteracount))
+# print("A*算法寻得最短路径")
+# pathFinderPoints = []
+# # 回溯父节点
+# pathFinderPoints.append(targetPoint)
+# fatherNode = came_from[targetPoint]
+# while fatherNode != startPoint:
+#     pathFinderPoints.append(fatherNode)
+#     fatherNode = came_from[fatherNode]
+    
+# pathFinderPoints.append(startPoint)#所有的网格节点信息
+# print("优化前节点个数： %d" % len(pathFinderPoints))
+# # 在地图上绘制最短路径
+# lineCount = 0;
+# PlanedcenterPnt=[]
+# while lineCount < (len(pathFinderPoints) - 1):
+#     last = pathFinderPoints[lineCount]
+#     new = pathFinderPoints[lineCount + 1]
+#     # print(last)
+#     lastCenter = ES.getCenterPoint(ullong, ullati, squaresize, last)  # Point
+#     PlanedcenterPnt.append(lastCenter)
+#     newCenter = ES.getCenterPoint(ullong, ullati, squaresize, new)  # Point
+#     if lineCount == 0:
+#         y1 = [lastCenter.y]
+#         x1 = [lastCenter.x]
+#         x1, y1 = m(x1, y1)
+#         m.scatter(x1, y1, c='r', marker='o')
+#     if lineCount == len(pathFinderPoints) - 2:
+#         y1 = [newCenter.y]
+#         x1 = [newCenter.x]
+#         x1, y1 = m(x1, y1)
+#         m.plot(x1, y1, c='r', marker='o')
+#     x = [lastCenter.y, newCenter.y]
+#     y = [lastCenter.x, newCenter.x]
+#     xlist, ylist = m(y, x)  # 将经纬度转换为图片所用坐标
+#     m.plot(xlist, ylist, color='b', linestyle=":")  # 首先画白线
+#     m.plot(xlist, ylist, color='r')  # 首先画白线
+#     lineCount = lineCount + 1
+# last = pathFinderPoints[lineCount]
+# lastCenter = ES.getCenterPoint(ullong, ullati, squaresize, last)  # Point
+# PlanedcenterPnt.append(lastCenter)
+# # 规划路径曲线长度
+# wayCount = 0
+# planeddistanceall = 0
+# while wayCount < (len(PlanedcenterPnt) - 1):
+#     planeddistanceall = planeddistanceall + getLineLength(PlanedcenterPnt[wayCount], PlanedcenterPnt[wayCount + 1])  # 米坐标
+#     wayCount += 1
+# print('A*路径长度',planeddistanceall)
+
+# # A*曲线优化为近似直线
+# curvelist = copy.deepcopy(pathFinderPoints)
+# curvelist.reverse()  # 逆序排列
+# curveCount = 0
+# distance = 1.5  # 设置距离，但是这里不太有效吧，仍然有问题
+# while curveCount < len(curvelist) - 2:
+#     # print("优化中")
+#     # 检测是否可以优化
+#     curvelist = ps.curveoptimize(curveCount, curvelist, DisNavigonal, distance)
+#     curveCount += 1;
+# print("路径曲线优化结束")
+# # 曲线再次优化，算法存在问题，之前不能优化的，现在又可以优化了
+# curveCount = 0;
+# distance = 2
+# while curveCount < len(curvelist) - 2:
+#     # print("优化中")
+#     # 检测是否可以优化
+#     curvelist = ps.curveoptimize(curveCount, curvelist, DisNavigonal, distance)
+#     curveCount += 1;
+# print("路径曲线再次优化结束")
+# # 得到节点中心点和个数
+# print(curvelist)
+# centerPnt = []
+# print("优化后节点个数： %d" % len(curvelist))
+# for node in curvelist:
+#     for waypnt in squareprolist:
+#         if waypnt.offsetCoord == node:
+#             centerPnt.append(waypnt.centerPoint)
+#             break
+
+# # 规划路径曲线长度
+# wayCount = 0
+# distanceall = 0
+# while wayCount < (len(centerPnt) - 1):
+#     distanceall = distanceall + getLineLength(centerPnt[wayCount], centerPnt[wayCount + 1])  # 米坐标
+#     wayCount += 1
+# print('A* 优化路径长度',distanceall)
+# lineCount = 0
+# while lineCount < (len(curvelist) - 1):
+#     last = curvelist[lineCount]
+#     new = curvelist[lineCount + 1]
+#     lastCenter = ES.getCenterPoint(ullong, ullati, squaresize, last)  # Point
+#     newCenter = ES.getCenterPoint(ullong, ullati, squaresize, new)  # Point
+#     x = [lastCenter.y, newCenter.y]
+#     y = [lastCenter.x, newCenter.x]
+#     xlist, ylist = m(y, x)  # 将经纬度转换为图片所用坐标
+#     m.plot(xlist, ylist, color='g')  # 首先画白线
+#     lineCount = lineCount + 1
+
+
+>>>>>>> 0c3650f7c5f507addb5831a320bafa456424fa04
 plt.show()
 print("界面显示成功")
